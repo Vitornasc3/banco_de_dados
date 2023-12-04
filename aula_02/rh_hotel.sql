@@ -18,8 +18,8 @@ VALUES("José Bezerra", "Recepcionista", 2300.00, "2020-11-05"),
 ("Luis Paulo Pereira", "Mensageiro", 1950.00, "2023-06-04"),
 ("Camilla Andrade", "Auxiliar Financeiro", 3450.00, "2019-02-25");
 
-SELECT * FROM tb_colaboradores WHERE salario > 2000;
+SELECT nome, cargo, CONCAT('R$ ', FORMAT(salario, 2, 'pt-BR')) AS salario FROM tb_colaboradores WHERE salario > 2000;
 
-SELECT * FROM tb_colaboradores WHERE salario < 2000;
+SELECT nome, cargo, CONCAT('R$', FORMAT(salario, 2, 'pt_BR')) AS salario FROM tb_colaboradores WHERE salario < 2000;
 
 UPDATE tb_colaboradores SET salario = 8200.00 WHERE id = 2;

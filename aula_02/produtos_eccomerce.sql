@@ -23,8 +23,8 @@ VALUES ("Devil May Cry 5", "Jogo", "PS4", 79.00),
 
 SELECT * FROM tb_produtos;
 
-SELECT * FROM tb_produtos WHERE preco > 180.00;
+SELECT id, nome, categoria, plataforma, CONCAT('R$ ', FORMAT(preco, 2, 'pt-BR')) AS preço FROM tb_produtos WHERE preco > 180.00;
 
-SELECT * FROM tb_produtos WHERE preco <= 180.00;
+SELECT id, nome, categoria, plataforma, CONCAT('R$ ', FORMAT(preco, 2, 'pt-BR')) AS preço FROM tb_produtos WHERE preco <= 180.00;
 
 UPDATE tb_produtos SET categoria = "acessório" WHERE id = 2;

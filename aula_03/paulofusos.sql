@@ -49,7 +49,7 @@ SELECT * FROM tb_produtos WHERE nome LIKE "%c%";
 
 -- Faça um SELECT utilizando a cláusula INNER JOIN, unindo os dados da tabela tb_produtos com os dados da tabela tb_categorias.
 
-SELECT nome, quantidade, valor, tb_categoria.descricao, tb_categoria.entrega
+SELECT nome, quantidade, CONCAT('R$ ', FORMAT(valor, 2, 'pt-BR')) AS preço, tb_categoria.descricao, tb_categoria.entrega
 FROM tb_produtos INNER JOIN tb_categoria
 ON categoria_id = tb_categoria.id;
 
